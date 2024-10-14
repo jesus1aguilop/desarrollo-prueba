@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis del suelo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container my-5">
+        <h2 class="text-center text-success mb-4">Análisis del suelo</h2>
+        <form>
+            <div class="row">
+                <!-- Columna izquierda -->
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="n-nh4" class="form-label">N-NH4</label>
+                        <input type="text" class="form-control" id="n-nh4" placeholder="ppm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="n-no3" class="form-label">N-NO3</label>
+                        <input type="text" class="form-control" id="n-no3" placeholder="ppm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="potasio" class="form-label">Potasio</label>
+                        <input type="text" class="form-control" id="potasio" placeholder="meq/cc">
+                    </div>
+                    <div class="mb-3">
+                        <label for="calcio" class="form-label">Calcio</label>
+                        <input type="text" class="form-control" id="calcio" placeholder="meq/cc">
+                    </div>
+                    <div class="mb-3">
+                        <label for="magnesio" class="form-label">Magnesio</label>
+                        <input type="text" class="form-control" id="magnesio" placeholder="meq/cc">
+                    </div>
+                    <div class="mb-3">
+                        <label for="sodio" class="form-label">Sodio</label>
+                        <input type="text" class="form-control" id="sodio" placeholder="meq/cc">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cic" class="form-label">C.I.C</label>
+                        <input type="text" class="form-control" id="cic" placeholder="meq/cc">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fosforo" class="form-label">Fósforo</label>
+                        <input type="text" class="form-control" id="fosforo" placeholder="ppm">
+                    </div>
+                </div>
+
+                <!-- Columna central -->
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="azufre" class="form-label">Azufre</label>
+                        <input type="text" class="form-control" id="azufre" placeholder="ppm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="hierro" class="form-label">Hierro</label>
+                        <input type="text" class="form-control" id="hierro" placeholder="ppm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="manganeso" class="form-label">Manganeso</label>
+                        <input type="text" class="form-control" id="manganeso" placeholder="ppm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="cobre" class="form-label">Cobre</label>
+                        <input type="text" class="form-control" id="cobre" placeholder="ppm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="zinc" class="form-label">Zinc</label>
+                        <input type="text" class="form-control" id="zinc" placeholder="ppm">
+                    </div>
+                    <div class="mb-3">
+                        <label for="boro" class="form-label">Boro</label>
+                        <input type="text" class="form-control" id="boro" placeholder="ppm">
+                    </div>
+                </div>
+
+                <!-- Columna derecha -->
+                <div class="col-md-4">
+                    <div class="mb-3">
+                        <label for="ph" class="form-label">pH</label>
+                        <input type="text" class="form-control" id="ph" placeholder="ph">
+                    </div>
+                    <div class="mb-3">
+                        <h5>Textura</h5>
+                        <label for="arena" class="form-label">Arena</label>
+                        <input type="text" class="form-control" id="arena" placeholder="%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="limo" class="form-label">Limo</label>
+                        <input type="text" class="form-control" id="limo" placeholder="%">
+                    </div>
+                    <div class="mb-3">
+                        <label for="arcilla" class="form-label">Arcilla</label>
+                        <input type="text" class="form-control" id="arcilla" placeholder="%">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón de enviar -->
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-success">Realizar análisis</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
