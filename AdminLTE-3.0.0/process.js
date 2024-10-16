@@ -165,7 +165,7 @@ function analisis_suelo() {
 }
 
 function reg_cultivo() {
-    document.getElementById("reg_cultivo").innerHTML = `
+    document.getElementById("analisis_suelo").innerHTML = `
          <div class="form-container">
     <h3 class="text-center" style="color: green;">Crea tu cultivo</h3>
     <form class="needs-validation" novalidate>
