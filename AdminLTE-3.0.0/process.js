@@ -1,16 +1,47 @@
-function setupValidation() {
-    'use strict';
-    const forms = document.querySelectorAll('.needs-validation');
-    Array.prototype.slice.call(forms).forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-            if (!form.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-            form.classList.add('was-validated');
-        }, false);
-    });
-}
+    // Función para configurar la validación campo por campo
+    function setupValidation() {
+        'use strict';
+        const forms = document.querySelectorAll('.needs-validation');
+    
+        // Recorremos todos los formularios que necesitan validación
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            // Añadimos el evento 'submit' para la validación del formulario completo
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+    
+            // Añadimos validación individual en cada input al perder el foco (blur)
+            const inputs = form.querySelectorAll('input, select, textarea'); // Todos los inputs
+            inputs.forEach(function (input) {
+                // Evento al salir del foco (blur) para validar el campo individualmente
+                input.addEventListener('blur', function () {
+                    if (!input.checkValidity()) {
+                        input.classList.add('is-invalid'); // Añadir clase para mostrar error
+                        input.classList.remove('is-valid');
+                    } else {
+                        input.classList.add('is-valid');   // Añadir clase para mostrar éxito
+                        input.classList.remove('is-invalid');
+                    }
+                });
+    
+                // Evento mientras se escribe (input) para validar de forma dinámica
+                input.addEventListener('input', function () {
+                    if (!input.checkValidity()) {
+                        input.classList.add('is-invalid');
+                        input.classList.remove('is-valid');
+                    } else {
+                        input.classList.add('is-valid');
+                        input.classList.remove('is-invalid');
+                    }
+                });
+            });
+        });
+    }
+    
 
 function analisis_suelo() {
     document.getElementById("analisis_suelo").innerHTML = `
@@ -100,23 +131,23 @@ function analisis_suelo() {
                     <div class="col-md-4">
                         <div class="mb-3">
                             <label for="ph" class="form-label">pH</label>
-                            <input type="text" class="form-control" id="ph" placeholder="pH" pattern="^[0-9]+(\\.[0-9]+)?$" required>
+                            <input type="text" class="form-control" id="ph" placeholder="pH" pattern="^(14(\.0)?|[0-1]?[0-9](\.[0-9])?)$" required>
                             <div class="invalid-feedback">Type a valid value.</div>
                         </div>
                         <div class="mb-3">
                             <h5>Textura</h5>
                             <label for="arena" class="form-label">Arena</label>
-                            <input type="text" class="form-control" id="arena" placeholder="%" pattern="^[0-9]+(\\.[0-9]+)?$" required>
+                            <input type="text" class="form-control" id="arena" placeholder="%" pattern="^(100(\.0{1,2})?|[0-9]{1,2}(\.[0-9]{1,2})?)$" required>
                             <div class="invalid-feedback">Type a valid percentage.</div>
                         </div>
                         <div class="mb-3">
                             <label for="limo" class="form-label">Limo</label>
-                            <input type="text" class="form-control" id="limo" placeholder="%" pattern="^[0-9]+(\\.[0-9]+)?$" required>
+                            <input type="text" class="form-control" id="limo" placeholder="%" pattern="^(100(\.0{1,2})?|[0-9]{1,2}(\.[0-9]{1,2})?)$" required>
                             <div class="invalid-feedback">Type a valid percentage.</div>
                         </div>
                         <div class="mb-3">
                             <label for="arcilla" class="form-label">Arcilla</label>
-                            <input type="text" class="form-control" id="arcilla" placeholder="%" pattern="^[0-9]+(\\.[0-9]+)?$" required>
+                            <input type="text" class="form-control" id="arcilla" placeholder="%" pattern="^(100(\.0{1,2})?|[0-9]{1,2}(\.[0-9]{1,2})?)$" required>
                             <div class="invalid-feedback">Type a valid percentage.</div>
                         </div>
                     </div>
@@ -200,7 +231,5 @@ function reg_cultivo() {
     </form>
   </div>
     `;
-
-
     setupValidation(); // Configurar validación
 }
