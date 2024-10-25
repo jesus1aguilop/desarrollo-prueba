@@ -1,0 +1,45 @@
+/* Estilos para el modo oscuro */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .main-header {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  body.dark-mode .main-sidebar {
+    background-color: #2c2c2c;
+  }
+  
+  body.dark-mode {
+    color: #ffffff;
+  }
+  body.dark-mode .content-wrapper {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  body.dark-mode .main-header {
+    background-color: #343a40;
+    color: #ffffff;
+  }
+  body.dark-mode .main-header .navbar-nav .nav-link {
+    color: #ffffff;
+  }
+  body.dark-mode .content-header .text-dark {
+    color: #ffffff !important;
+  }
+  body.dark-mode .card {
+    background-color: #2c2c2c;
+    color: #ffffff;
+  }
+  
+  /* Cambia el icono cuando el modo oscuro está activado */
+  body.dark-mode #darkModeToggle i {
+    color: #ffd700; /* Color dorado para el sol */
+  }
+  
+  body.dark-mode #darkModeToggle i::before {
+    content: "\f185"; /* Código del icono de sol en Font Awesome */
+  }
